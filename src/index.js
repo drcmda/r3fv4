@@ -30,10 +30,10 @@ function Fatline({ curve, width, color, speed }) {
 }
 
 function r() {
-  return Math.max(0.5, Math.random())
+  return Math.max(0.2, Math.random())
 }
 
-function Lines({ mouse, count, colors, radius = 15 }) {
+function Lines({ mouse, count, colors, radius = 10 }) {
   const lines = useMemo(
     () =>
       new Array(count).fill().map(() => {
@@ -46,7 +46,7 @@ function Lines({ mouse, count, colors, radius = 15 }) {
         return {
           color: colors[parseInt(colors.length * Math.random())],
           width: 0.1,
-          speed: Math.max(0.0005, 0.001 * Math.random()),
+          speed: Math.max(0.001, 0.003 * Math.random()),
           curve
         }
       }),
@@ -58,8 +58,8 @@ function Lines({ mouse, count, colors, radius = 15 }) {
   const aspect = size.width / viewport.width
   useFrame(state => {
     if (ref.current) {
-      ref.current.rotation.x = lerp(ref.current.rotation.x, 0 + mouse.current[1] / aspect / 50, 0.1)
-      ref.current.rotation.y = lerp(ref.current.rotation.y, 0 + mouse.current[0] / aspect / 100, 0.1)
+      ref.current.rotation.x = lerp(ref.current.rotation.x, 0 + mouse.current[1] / aspect / 200, 0.1)
+      ref.current.rotation.y = lerp(ref.current.rotation.y, 0 + mouse.current[0] / aspect / 400, 0.1)
     }
   })
 
@@ -228,7 +228,7 @@ function App() {
         <pointLight distance={100} intensity={4} color="white" />
         <Number mouse={mouse} hover={hover} />
         <Swarm count={isMobile ? 5000 : 10000} mouse={mouse} />
-        <Lines count={10} mouse={mouse} colors={['#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue']} />
+        <Lines count={20} mouse={mouse} colors={['#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue']} />
         <Effect down={down} />
       </Canvas>
       <div className="frame">
