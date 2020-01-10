@@ -1,0 +1,16 @@
+dist/
+.bic_cache
+.rpt2_cache/
+node_modules/
+coverage/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+package-lock.json
+report.*.json
+.idea
+*.log
+/docs/
+/examples/
