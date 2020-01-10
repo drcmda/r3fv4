@@ -3,7 +3,7 @@
     yarn
     yarn start
 
-what's new: https://github.com/react-spring/react-three-fiber/blob/master/whatsnew.md
+what's new in react-three-fiber v4: https://github.com/react-spring/react-three-fiber/blob/master/whatsnew.md
 
 demo: https://r3fv4.surge.sh
 
