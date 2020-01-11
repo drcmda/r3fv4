@@ -22,6 +22,20 @@ function Ellipse(props) {
   )
 }
 
+function ReactAtom(props) {
+  return (
+    <group {...props}>
+      <Ellipse />
+      <Ellipse rotation={[0, 0, Math.PI / 3]} />
+      <Ellipse rotation={[0, 0, -Math.PI / 3]} />
+      <mesh>
+        <sphereBufferGeometry attach="geometry" args={[0.5, 32, 32]} />
+        <meshBasicMaterial attach="material" color="red" />
+      </mesh>
+    </group>
+  )
+}
+
 function Number({ mouse, hover }) {
   const ref = useRef()
   const { size, viewport } = useThree()
@@ -43,15 +57,7 @@ function Number({ mouse, hover }) {
           onPointerOut={() => hover(false)}>
           4
         </Text>
-        <group position={[35, -20, 0]} scale={[1, 0.5, 1]}>
-          <Ellipse />
-          <Ellipse rotation={[0, 0, Math.PI / 3]} />
-          <Ellipse rotation={[0, 0, -Math.PI / 3]} />
-          <mesh>
-            <sphereBufferGeometry attach="geometry" args={[0.5, 32, 32]} />
-            <meshBasicMaterial attach="material" color="red" />
-          </mesh>
-        </group>
+        <ReactAtom position={[35, -20, 0]} scale={[1, 0.5, 1]} />
       </group>
     </Suspense>
   )
