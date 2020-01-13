@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import React, { useRef, useMemo } from 'react'
 import { extend, useFrame, useThree } from 'react-three-fiber'
 import lerp from 'lerp'
-import * as meshline from 'threejs-meshline'
+import * as meshline from './MeshLine'
 
 extend(meshline)
 

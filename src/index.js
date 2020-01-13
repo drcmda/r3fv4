@@ -88,7 +88,6 @@ function App() {
           gl.toneMapping = THREE.Uncharted2ToneMapping
           gl.setClearColor(new THREE.Color('#020207'))
         }}>
-        <fog attach="fog" args={['white', 50, 190]} />
         <pointLight distance={100} intensity={4} color="white" />
         <Number mouse={mouse} hover={hover} />
         <Particles count={isMobile ? 5000 : 10000} mouse={mouse} />
